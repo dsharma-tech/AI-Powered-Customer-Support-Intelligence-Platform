@@ -36,7 +36,7 @@ Customer Support Intelligence Platform/
 ---
 
 ## ⚡ Key Features
-
+https://www.kaggle.com/datasets/suraj520/customer-support-ticket-dataset?resource=download
 1. **Clean Data Preprocessing & Feature Extraction:**
    - Cleans ticket datasets and computes duration features (First Response Time, Resolution Duration).
 2. **AI-Driven NLP (Sentiment & Topic Clustering):**
