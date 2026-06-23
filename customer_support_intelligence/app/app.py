@@ -1,3 +1,4 @@
+from pathlib import Path
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -9,6 +10,11 @@ import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import shap
 from google import genai
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+processed_path = BASE_DIR / "data" / "processed" / "customer_support_tickets_processed.csv"
+model_path = BASE_DIR / "models" / "best_model.pkl"
+preprocessor_path = BASE_DIR / "models" / "preprocessor.pkl"
 
 # ----------------------------------------------------
 # 1. Page Configuration & Theme
@@ -26,7 +32,7 @@ def local_css(file_name):
         with open(file_name) as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
-local_css("customer_support_intelligence/app/styles.css")
+local_css(str(BASE_DIR / "app" / "styles.css"))
 # Initialize Google GenAI client
 default_key = "[SECURE_REMOVED_KEY]"
 api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or default_key
@@ -58,18 +64,13 @@ except Exception:
 # ----------------------------------------------------
 @st.cache_data
 def load_data():
-    processed_path = '/Users/dishasharma/Documents/2026/Data Analytics/Projects/Customer Support Intelligence Platform/customer_support_intelligence/data/processed/customer_support_tickets_processed.csv'
-    if os.path.exists(processed_path):
+    if processed_path.exists():
         return pd.read_csv(processed_path)
     return pd.DataFrame()
 
 @st.cache_resource
 def load_ml_artifacts():
-    models_dir = '/Users/dishasharma/Documents/2026/Data Analytics/Projects/Customer Support Intelligence Platform/customer_support_intelligence/models'
-    preprocessor_path = os.path.join(models_dir, 'preprocessor.pkl')
-    model_path = os.path.join(models_dir, 'best_model.pkl')
-    
-    if os.path.exists(preprocessor_path) and os.path.exists(model_path):
+    if preprocessor_path.exists() and model_path.exists():
         with open(preprocessor_path, 'rb') as f:
             preprocessor = pickle.load(f)
         with open(model_path, 'rb') as f:
