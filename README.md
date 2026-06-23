@@ -34,7 +34,23 @@ Customer Support Intelligence Platform/
 ```
 
 ---
+## 📊 Dataset Information
 
+The project utilizes the **Customer Support Ticket Dataset** available on Kaggle.
+
+**Dataset Source:**  
+https://www.kaggle.com/datasets/suraj520/customer-support-ticket-dataset
+
+**Dataset Highlights**
+- ~8,469 customer support tickets
+- Customer demographics (Age, Gender)
+- Product purchased information
+- Ticket type, priority, channel and status
+- First response and resolution times
+- Customer satisfaction ratings
+- Textual ticket descriptions used for NLP analysis
+
+  
 ## ⚡ Key Features
 
 1. **Clean Data Preprocessing & Feature Extraction:**
