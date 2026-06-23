@@ -1,0 +1,233 @@
+/* Vercel Analytics & PostHog Inspired Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* Main Container Constraints */
+.block-container {
+    max-width: 1400px !important;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+html,
+body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #F8FAFC !important;
+    background-color: #020617 !important;
+}
+
+/* Background layout details */
+.stApp {
+    background-color: #020617 !important;
+}
+
+/* Unified SaaS Minimal Cards */
+.saas-card {
+    background: #09162F !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 28px !important;
+    padding: 24px !important;
+    box-shadow: none !important;
+    margin-bottom: 20px;
+}
+
+/* Apply card backgrounds directly to Plotly charts and forms */
+[data-testid="stForm"] {
+    background-color: #09162F !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 28px !important;
+    padding: 24px !important;
+    box-shadow: none !important;
+    margin-bottom: 20px !important;
+    transition: border-color 0.2s ease;
+}
+
+[data-testid="stForm"]:hover,
+.saas-card:hover {
+    border-color: rgba(124, 58, 237, 0.4) !important;
+}
+
+/* Custom Chart Card Styling */
+.chart-card {
+    background: #09162F !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 28px !important;
+    padding: 24px !important;
+    box-shadow: none !important;
+}
+
+/* Style only the inner column vertical blocks wrapping our charts */
+div[data-testid="stVerticalBlock"]:has(> .element-container .chart-card-marker) {
+    background: #09162F !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 28px !important;
+    padding: 24px !important;
+    box-shadow: none !important;
+}
+
+.chart-card-marker {
+    display: none;
+}
+
+/* Metric KPI Card */
+.kpi-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kpi-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+}
+
+.kpi-value {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #F8FAFC;
+    line-height: 1;
+}
+
+.kpi-accent-purple {
+    color: #7C3AED !important;
+}
+
+.kpi-accent-cyan {
+    color: #22D3EE !important;
+}
+
+/* Hero elements */
+.hero-title {
+    font-size: 3.25rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #ffffff;
+    letter-spacing: -0.04em;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #ffffff 30%, #a78bfa 70%, #22d3ee 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: #94A3B8;
+    margin-bottom: 32px;
+    line-height: 1.6;
+    font-weight: 400;
+    max-width: 800px;
+}
+
+/* Section Header Badges */
+.section-badge {
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    color: #c084fc;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    margin-bottom: 12px;
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, #ffffff 60%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-subtitle {
+    font-size: 0.9rem;
+    color: #64748B;
+    margin-bottom: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* Custom form and controls */
+.stTextInput>div>div>input,
+.stTextArea>div>div>textarea,
+.stSelectbox>div>div>div,
+.stNumberInput>div>div>input {
+    background-color: #020617 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #F8FAFC !important;
+    border-radius: 6px !important;
+}
+
+.stButton>button {
+    background-color: #7C3AED !important;
+    color: #F8FAFC !important;
+    font-weight: 600 !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 8px 20px !important;
+    transition: opacity 0.2s ease !important;
+}
+
+.stButton>button:hover {
+    opacity: 0.9 !important;
+}
+
+/* Compact Filter Section Selectboxes */
+.stSelectbox {
+    margin-bottom: 0px !important;
+}
+
+.stSelectbox [data-baseweb="select"] {
+    background-color: #0f172a !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 6px !important;
+    height: 38px !important;
+    font-size: 0.875rem !important;
+    color: #F8FAFC !important;
+}
+
+.stSelectbox [data-baseweb="select"]>div {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+/* Dropdown select hovered border */
+.stSelectbox [data-baseweb="select"]:hover {
+    border-color: rgba(124, 58, 237, 0.4) !important;
+}
+
+/* Glass Card Styling for AI Outputs */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-top: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* Style the Streamlit container block that contains our glass card marker as a glass card */
+div[data-testid="stVerticalBlock"]:has(> .element-container .glass-card-marker) {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    margin-top: 15px !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: none !important;
+}
+
+.glass-card-marker {
+    display: none;
+}
