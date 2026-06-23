@@ -10,6 +10,10 @@ import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import shap
 from google import genai
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 processed_path = BASE_DIR / "data" / "processed" / "customer_support_tickets_processed.csv"
@@ -34,8 +38,7 @@ def local_css(file_name):
 
 local_css(str(BASE_DIR / "app" / "styles.css"))
 # Initialize Google GenAI client
-default_key = "[SECURE_REMOVED_KEY]"
-api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or default_key
+api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
 
 with st.sidebar:
     st.markdown("### 🔑 Gemini API Configuration")
